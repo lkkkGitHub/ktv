@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd"
+       default-lazy-init="true">
+
+    <!-- 只需扫描 业务逻辑层的类，因为控制层由springMVC配置文件扫描，，实体对象和Dao层数据访问接口由 MyBatis配置文件扫描. -->
+    <context:component-scan base-package="com"/>
+
+    <!--加载数据库的属性文件-->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location">
+            <value>classpath:jdbc.properties</value>
+        </property>
+    </bean>
+
+    <!-- 配置数据源 -->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url"
+                  value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="initialSize" value="${jdbc.initialSize}"/>
+        <property name="maxActive" value="${jdbc.maxActive}"/>    <!-- 最大连接数 -->
+        <property name="maxIdle" value="${jdbc.maxIdle}"/>   <!-- 最大空闲连接数 -->
+        <property name="minIdle" value="${jdbc.minIdle}"/>    <!--最小空闲连接数 -->
+        <property name="maxWait" value="${jdbc.maxWait}"/>  <!-- 最大空闲时间 ： 2分钟  毫秒-->
+    </bean>
+    <!-- 配置MyBatis SqlSessionFactory SqlSession->数据访问接口 -->
+    <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!-- 关联数据源 -->
+        <property name="dataSource" ref="dataSource"/>
+        <!-- 加载数据访问接口映射文件 -->
+        <property name="mapperLocations" value="classpath:mappers/*.xml"/>
+        <!-- 加载MyBatis的主配置文件 -->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <!--加载实体类的别名 <property name="typeAliases" value="classpath:com.etc.entity"/> -->
+    </bean>
+
+    <!-- 扫描加载所有的数据访问接口 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBean"/>
+        <property name="basePackage" value="com.mql.dao"/>
+    </bean>
+
+    <!-- 事务配置 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <!--以注解的形式加载dao接口-->
+    <!--<mybatis-spring:scan base-package="com.mql.mapper"/>-->
+    <context:annotation-config/>
+
+</beans>

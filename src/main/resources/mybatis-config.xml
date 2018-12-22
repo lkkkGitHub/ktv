@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--&lt;!&ndash;加载数据库配置文件 由spring管理&ndash;&gt;-->
+    <!--<properties resource="jdbc.properties"></properties>-->
+
+    <!--设置mybatis的属性二级缓存，延迟加载等等-->
+    <settings>
+        <!--打开延迟加载开关-->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!--将积极加载变为消极加载-->
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <!--开启二级缓存-->
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+
+    <!--
+    给实体类取别名 简化操作 类型名称 别名  可以通过别名操作实体类
+    将这个包下的实体类全部取别名 命名规则 别名等于类名
+    -->
+    <typeAliases>
+        <package name="com.pojo"/>
+    </typeAliases>
+    <!--
+    <typeHandlers></typeHandlers>
+    类型处理器  完成jdbc类型和Java类型的转换
+    基本满足需求  无需自定义
+    -->
+    <!--<environments default="development"> 由spring管理-->
+    <!--<environment id="development">-->
+    <!--&lt;!&ndash;使用jdbc事务控制，由mybatis控制&ndash;&gt;-->
+    <!--<transactionManager type="JDBC"/>-->
+    <!--<dataSource type="POOLED">-->
+    <!--<property name="driver" value="${jdbc.driver}"/>-->
+    <!--<property name="url" value="${jdbc.url}"/>-->
+    <!--<property name="username" value="${jdbc.username}"/>-->
+    <!--<property name="password" value="${jdbc.password}"/>-->
+    <!--</dataSource>-->
+    <!--</environment>-->
+    <!--</environments>-->
+    <!--&lt;!&ndash;-->
+    <!--加载映射文件-->
+    <!--url 绝对路径加载映射文件-->
+    <!--resource 直接一次加载一个映射文件-->
+    <!--class 通过mapper的接口加载映射文件 再同一个目录中且名称相同   例如：UserMapper.java UserMapper.xml-->
+    <!--package 批量加载 指定mapper接口的映射文件 再同一个目录中且名称相同-->
+    <!--&ndash;&gt;-->
+    <!--<mappers>-->
+    <!--<mapper resource="mapper/UserMapper.xml"/>-->
+    <!--</mappers>-->
+</configuration>
