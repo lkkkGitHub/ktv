@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mql.dao.TbUserDao">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.mql.pojo.TbUser">
+        <result column="userId" property="userId"/>
+        <result column="sex" property="sex"/>
+        <result column="age" property="age"/>
+        <result column="phone" property="phone"/>
+        <result column="isBlock" property="isBlock"/>
+        <result column="userName" property="userName"/>
+        <result column="password" property="password"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="all_column">
+        `userId`,
+        `sex`,
+        `age`,
+        `phone`,
+        `isBlock`,
+        `userName`,
+        `password`
+    </sql>
+
+    <!--auto generated Code-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="userId">
+        INSERT INTO tb_user (
+            `userId`,
+            `sex`,
+            `age`,
+            `phone`,
+            `isBlock`,
+            `userName`,
+            `password`
+        ) VALUES (
+            #{userId},
+            #{sex},
+            #{age},
+            #{phone},
+            #{isBlock},
+            #{userName},
+            #{password}
+        )
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="userId">
+        INSERT INTO tb_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId!=null"> `userId`,</if>
+            <if test="sex!=null"> `sex`,</if>
+            <if test="age!=null"> `age`,</if>
+            <if test="phone!=null"> `phone`,</if>
+            <if test="isBlock!=null"> `isBlock`,</if>
+            <if test="userName!=null"> `userName`,</if>
+            <if test="password!=null"> `password`,</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId!=null">#{userId},</if>
+            <if test="sex!=null">#{sex},</if>
+            <if test="age!=null">#{age},</if>
+            <if test="phone!=null">#{phone},</if>
+            <if test="isBlock!=null">#{isBlock},</if>
+            <if test="userName!=null">#{userName},</if>
+            <if test="password!=null">#{password},</if>
+        </trim>
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO tb_user (
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{userId},
+            #{sex},
+            #{age},
+            #{phone},
+            #{isBlock},
+            #{userName},
+            #{password}
+            )
+        </foreach>
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="update">
+        UPDATE tb_user
+        <set>
+            <if test="userId != null"> `userId` = #{userId}, </if>
+            <if test="sex != null"> `sex` = #{sex}, </if>
+            <if test="age != null"> `age` = #{age}, </if>
+            <if test="phone != null"> `phone` = #{phone}, </if>
+            <if test="isBlock != null"> `isBlock` = #{isBlock}, </if>
+            <if test="userName != null"> `userName` = #{userName}, </if>
+            <if test="password != null"> `password` = #{password} </if>
+        </set>
+        WHERE userId = #{userId}
+    </update>
+
+    <select id="findUserByPhone" resultMap="AllColumnMap">
+        SELECT * FROM `tb_user` WHERE `phone` = #{phone}
+    </select>
+</mapper>
+
