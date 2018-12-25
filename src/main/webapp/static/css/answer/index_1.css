@@ -1,0 +1,89 @@
+/* ::::: http://demo.sc.chinaz.com/Files/DownLoad/webjs1/201706/jiaoben5169/css/main.css ::::: */
+
+* { margin: 0px; padding: 0px; }
+html, body { width: 100%; height: 100%; overflow: auto; font-size: 12px; margin: 0px; padding: 0px; font-family: "微软雅黑"; background: rgb(255, 255, 255) none repeat scroll 0% 0%; text-align: center; }
+ul, li { list-style: outside none none; }
+a { text-decoration: none; color: rgb(102, 102, 102); }
+a:hover { text-decoration: none; }
+i { font-style: normal; }
+@font-face {
+	font-family: "iconfont";
+	src: url('iconfont.eot');
+}
+.iconfont { font-family: iconfont ! important; font-style: normal; }
+.foot { width: 100%; height: 50px; clear: both; }
+/* ::::: http://demo.sc.chinaz.com/Files/DownLoad/webjs1/201706/jiaoben5169/css/iconfont.css ::::: */
+
+@font-face {
+	font-family: "iconfont";
+	src: url('iconfont_001.eot') format("embedded-opentype"), url('iconfont.woff') format("woff"), url('iconfont.ttf') format("truetype"), url('iconfont.svg') format("svg");
+}
+.iconfont { font-family: "iconfont" ! important; font-size: 16px; font-style: normal; }
+.icon-gouwuche::before { content: ""; }
+.icon-mima::before { content: ""; }
+.icon-shijian::before { content: ""; }
+.icon-xiaosanjiaoxing02::before { content: ""; }
+.icon-sousuo::before { content: ""; }
+.icon-jinlingyingcaiwangtubiao08::before { content: ""; }
+.icon-renminbi::before { content: ""; }
+.icon-gouxuan::before { content: ""; }
+.icon-xiangshang::before { content: ""; }
+.icon-xiangxia::before { content: ""; }
+.icon-shuangjiantouxiangzuo::before { content: ""; }
+.icon-yonghuming::before { content: ""; }
+.icon-2daochu01::before { content: ""; }
+.icon-datiqia::before { content: ""; }
+.icon-wujiaoxing2::before { content: ""; }
+.icon-peixun::before { content: ""; }
+.icon-cha::before { content: ""; }
+.icon-piliangshanchu::before { content: ""; }
+.icon-Create_member::before { content: ""; }
+.icon-daoru8::before { content: ""; }
+.icon-xiaosanjiaoxing01::before { content: ""; }
+.icon-youjiantou-copy::before { content: ""; }
+/* ::::: http://demo.sc.chinaz.com/Files/DownLoad/webjs1/201706/jiaoben5169/css/test.css ::::: */
+
+.test_main { width: 1200px; margin: 15px auto 0px; }
+.nr_left { width: 900px; height: 100%; float: left; }
+.test { width: 100%; border: 1px solid rgb(228, 228, 228); text-align: left; float: left; }
+.test_title { width: 900px; height: 45px; line-height: 45px; background-color: rgb(247, 247, 247); position: fixed; bottom: 0px; z-index: 1000; }
+.test_title p { padding: 0px 20px; display: block; float: left; }
+.test_time { color: rgb(255, 0, 0); line-height: 45px; }
+.test_time i { font-size: 20px; height: 45px; line-height: 40px; display: block; float: left; }
+.test_time b { font-size: 16px; height: 45px; display: block; float: left; margin-left: 10px; }
+.test_title font { width: 80px; height: 45px; display: block; float: right; text-align: center; }
+.test_title font input { background: rgb(56, 159, 195) none repeat scroll 0% 0%; border: medium none; display: block; width: 80px; height: 45px; cursor: pointer; color: rgb(255, 255, 255); font-size: 16px; font-weight: bold; }
+.test_title font input:active { background: rgb(121, 174, 240) none repeat scroll 0% 0%; }
+.test_content { width: 100%; height: auto; margin-top: 15px; }
+.test_content_title { width: 100%; height: 50px; line-height: 50px; background: rgb(247, 247, 247) none repeat scroll 0% 0%; text-align: center; }
+.test_content_title h2 { padding: 0px 30px; font-size: 16px; font-weight: normal; display: block; float: left; }
+.test_content_title p { padding: 0px 10px; height: 40px; line-height: 40px; background: rgb(56, 159, 195) none repeat scroll 0% 0%; color: rgb(255, 255, 255); border-radius: 30px; display: block; float: left; margin-top: 5px; }
+.test_content_nr { width: 100%; border-top: 3px solid rgb(239, 239, 239); }
+.test_content_nr > ul > li { width: 100%; border-bottom: 5px solid rgb(239, 239, 239); padding-top: 10px; }
+.test_content_nr_tt { width: 85%; height: auto; line-height: 32px; margin: 0px auto; border-bottom: 1px solid rgb(228, 228, 228); }
+.test_content_nr_tt i { width: 25px; height: 25px; line-height: 25px; text-align: center; display: block; float: left; background: rgb(93, 156, 236) none repeat scroll 0% 0%; border-radius: 50%; margin-left: -50px; color: rgb(255, 255, 255); margin-top: 8px; font-size: 16px; }
+.test_content_nr_tt span { padding: 0px 8px; }
+.test_content_nr_tt font { font-size: 14px; }
+.test_content_nr_tt b { display: block; float: right; margin-right: -50px; color: rgb(244, 140, 39); font-size: 20px; }
+.test_content_nr_main { width: 85%; margin: 0px auto; padding: 10px 0px; height: auto; }
+.option { line-height: 32px; display: block; background: rgb(255, 255, 255) none repeat scroll 0% 0%; color: rgb(102, 102, 102); }
+.option:hover { background: rgb(228, 228, 228) none repeat scroll 0% 0%; }
+.option input { width: 20px; height: 20px; display: block; float: left; margin: 10px 10px 0px 0px; }
+.option label { height: auto; display: block; }
+.nr_right { width: 280px; height: 100%; float: right; }
+.nr_rt_main { width: 100%; height: auto; }
+.rt_nr1 { width: 280px; position: fixed; top: 15px; z-index: 1000; }
+.rt_nr1_title { width: 280px; height: 45px; line-height: 45px; background: rgb(243, 243, 243) none repeat scroll 0% 0%; }
+.rt_nr1_title h1 { width: 130px; height: 45px; background: rgb(56, 159, 195) none repeat scroll 0% 0%; text-align: center; font-size: 14px; display: block; float: left; color: rgb(255, 255, 255); }
+.rt_nr1_title h1 i { padding: 0px 5px; font-size: 14px; font-weight: normal; }
+.rt_nr1_title p { width: 141px; height: 43px; padding-right: 8px; border-width: 1px 1px 1px 0px; border-style: solid solid solid none; border-color: rgb(228, 228, 228) rgb(228, 228, 228) rgb(228, 228, 228) -moz-use-text-color; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; display: block; float: right; }
+.rt_nr1_title p i { margin-left: 10px; }
+.rt_content { width: 278px; height: 100%; border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(228, 228, 228) rgb(228, 228, 228); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; }
+.rt_content_tt { width: 95%; height: 40px; line-height: 40px; margin: 0px auto; border-bottom: 1px solid rgb(228, 228, 228); }
+.rt_content_tt h2 { width: 150px; font-size: 14px; display: inline-block; }
+.rt_content_tt p { width: 100px; display: inline-block; }
+.answerSheet ul { padding: 10px; text-align: left; }
+.answerSheet li { display: inline-block; margin-bottom: 5px; height: 30px; width: 30px; line-height: 30px; text-align: center; border: 1px solid rgb(228, 228, 228); }
+.answerSheet li a { display: block; }
+.answerSheet li:hover { color: rgb(56, 159, 195); border-color: rgb(56, 159, 195); }
+.hasBeenAnswer { background: rgb(93, 156, 236) none repeat scroll 0% 0%; color: rgb(255, 255, 255); }
