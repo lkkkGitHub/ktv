@@ -10,7 +10,7 @@ public class TbUser {
      */
     private String userId;
     /**
-     * 性别  0 表示男 1 表示女
+     * 性别  0 表示男 1 表示女 2 保密
      */
     private Integer sex;
     /**

@@ -48,13 +48,13 @@
     <insert id="insertSelective" useGeneratedKeys="true" keyProperty="userId">
         INSERT INTO tb_user
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="userId!=null"> `userId`,</if>
-            <if test="sex!=null"> `sex`,</if>
-            <if test="age!=null"> `age`,</if>
-            <if test="phone!=null"> `phone`,</if>
-            <if test="isBlock!=null"> `isBlock`,</if>
-            <if test="userName!=null"> `userName`,</if>
-            <if test="password!=null"> `password`,</if>
+            <if test="userId!=null">`userId`,</if>
+            <if test="sex!=null">`sex`,</if>
+            <if test="age!=null">`age`,</if>
+            <if test="phone!=null">`phone`,</if>
+            <if test="isBlock!=null">`isBlock`,</if>
+            <if test="userName!=null">`userName`,</if>
+            <if test="password!=null">`password`,</if>
         </trim>
         VALUES
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -90,19 +90,27 @@
     <update id="update">
         UPDATE tb_user
         <set>
-            <if test="userId != null"> `userId` = #{userId}, </if>
-            <if test="sex != null"> `sex` = #{sex}, </if>
-            <if test="age != null"> `age` = #{age}, </if>
-            <if test="phone != null"> `phone` = #{phone}, </if>
-            <if test="isBlock != null"> `isBlock` = #{isBlock}, </if>
-            <if test="userName != null"> `userName` = #{userName}, </if>
-            <if test="password != null"> `password` = #{password} </if>
+            <if test="userId != null">`userId` = #{userId},</if>
+            <if test="sex != null">`sex` = #{sex},</if>
+            <if test="age != null">`age` = #{age},</if>
+            <if test="phone != null">`phone` = #{phone},</if>
+            <if test="isBlock != null">`isBlock` = #{isBlock},</if>
+            <if test="userName != null">`userName` = #{userName},</if>
+            <if test="password != null">`password` = #{password}</if>
         </set>
         WHERE userId = #{userId}
     </update>
 
     <select id="findUserByPhone" resultMap="AllColumnMap">
         SELECT * FROM `tb_user` WHERE `phone` = #{phone}
+    </select>
+
+    <select id="findCountByName" parameterType="java.lang.String" resultType="java.lang.Integer">
+        SELECT COUNT(1) FROM `tb_user` WHERE `userName` = #{name} LIMIT 0, 1
+    </select>
+
+    <select id="findCountByPhone" parameterType="java.lang.String" resultType="java.lang.Integer">
+        SELECT COUNT(1) FROM `tb_user` WHERE `phone` = #{phone} LIMIT 0, 1
     </select>
 </mapper>
 

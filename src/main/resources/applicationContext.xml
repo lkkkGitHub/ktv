@@ -51,7 +51,7 @@
         <property name="mapperLocations" value="classpath:mappers/*.xml"/>
         <!-- 加载MyBatis的主配置文件 -->
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
-        <!--加载实体类的别名 <property name="typeAliases" value="classpath:com.etc.entity"/> -->
+        <!--加载实体类的别名 <property phone="typeAliases" value="classpath:com.etc.entity"/> -->
     </bean>
 
     <!-- 扫描加载所有的数据访问接口 -->

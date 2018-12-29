@@ -1,0 +1,11 @@
+@CHARSET "UTF-8";
+#footer{position:relative;z-index:100;width:100%;min-width:1280px;height:60px;padding-top:10px;line-height:20px;color:#A9AFB7;border-top:1px solid #CCCCCC;text-align:center;}
+#footer .copyright{text-align:left;padding:10px 0 10px 15px;margin-left:15px; vertical-align:top;}
+#footer a{color:#737C8C;}
+#footer a:hover{color:#333333;text-decoration:underline;}
+
+.dblock{font-size:0;/* 所有浏览器 */letter-spacing:0;*letter-spacing:normal;}
+.inline-block1{font-size:14px;display:inline-block;*display:inline;*zoom:1;letter-spacing: normal;}
+.inline-block{font-size:14px;display:inline-block;*display:inline;*zoom:1;letter-spacing: normal; margin-top:-25px;}
+.go-regist{text-align:center;height:80px;line-height:80px;margin-top:-20px;} 
+a.link,.go-regist a,.loginbox label a{color:#006DA7; cursor:pointer; line-height:25px;}

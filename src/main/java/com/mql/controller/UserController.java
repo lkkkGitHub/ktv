@@ -2,13 +2,16 @@ package com.mql.controller;
 
 import com.mql.pojo.TbUser;
 import com.mql.service.UserService;
+import com.mql.until.MD5Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import java.util.UUID;
 
 /**
  * @author mql
@@ -42,5 +45,42 @@ public class UserController {
         } else {
             return false;
         }
+    }
+
+    /**
+     * 判断用户名是否存在
+     *
+     * @param name 用户名
+     * @return 存在返回false 不存在返回true
+     */
+    @ResponseBody
+    @PostMapping("/verifyName")
+    public Boolean verifyName(String name) {
+        return userService.verifyName(name);
+    }
+
+    /**
+     * 判断手机号码是否存在
+     *
+     * @param phone 手机号码
+     * @return 存在返回false 不存在返回true
+     */
+    @ResponseBody
+    @PostMapping("/verifyPhone")
+    public Boolean verifyPhone(String phone) {
+        return userService.verifyPhone(phone);
+    }
+    /**
+     * 注册写入数据库 uid, uname, password, email, phone, sex(0男，1女，2保密）,
+     * image,status(0false:删除 ，1true存在), VIP（0 非，1是）
+     *
+     * @return
+     */
+    @ResponseBody
+    @PostMapping("/register")
+    public Boolean register(TbUser user) {
+        user.setUserId(UUID.randomUUID().toString().replace("-", "").toLowerCase());
+        user.setPassword(MD5Utils.md5(user.getPassword()));
+        return userService.register(user);
     }
 }

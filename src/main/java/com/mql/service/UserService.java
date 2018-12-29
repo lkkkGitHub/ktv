@@ -4,7 +4,6 @@ import com.mql.until.MD5Utils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 import com.mql.pojo.TbUser;
 import com.mql.dao.TbUserDao;
@@ -38,5 +37,39 @@ public class UserService {
                 return null;
             }
         }
+    }
+
+    /**
+     * 判断用户名是否已经存在
+     *
+     * @param name 用户名
+     * @return 存在返回false 不存在返回true
+     */
+    public Boolean verifyName(String name) {
+        return tbUserDao.findCountByName(name) == 0;
+    }
+
+    /**
+     * 判断手机号码是否存在
+     *
+     * @param phone 手机号号码
+     * @return 存在返回false，不 true
+     */
+    public Boolean verifyPhone(String phone) {
+        return tbUserDao.findCountByPhone(phone) == 0;
+    }
+
+    /**
+     * 注册，写入数据库，保证用户名，电话号码唯一，密码加密
+     *
+     * @param tbUser 用户信息
+     * @return 成功返回true
+     */
+    public Boolean register(TbUser tbUser) {
+        int flag = tbUserDao.insertSelective(tbUser);
+        if (flag != 1) {
+            return false;
+        }
+        return true;
     }
 }

@@ -1,7 +1,6 @@
 package com.mql.dao;
 
 
-
 import com.mql.pojo.TbUser;
 
 /**
@@ -16,4 +15,22 @@ public interface TbUserDao {
      * @return 用户信息
      */
     TbUser findUserByPhone(String phone);
+
+    /**
+     * 根据用户名，查询用户名是否存在
+     *
+     * @param name 注册时用户输入的用户名
+     * @return 存在返回 1 不存在 0
+     */
+    Integer findCountByName(String name);
+
+    /**
+     * 根据手机号号，查询手机号是否已经注册
+     *
+     * @param phone 手机号
+     * @return 存在返回 1 不存在返回 0
+     */
+    Integer findCountByPhone(String phone);
+
+    Integer insertSelective(TbUser user);
 }
