@@ -9,12 +9,12 @@
 <meta name="keywords" content="风车乐栈,播放器,播放器下载,音乐,音乐下载,音乐播放器,MV,MTV,高清MV,热门MV,MV下载,mv在线观看" />
 <meta name="description" content="风车乐栈是风车乐栈公司推出的一款免费音乐服务，海量乐库在线试听、最流行新歌在线首发、高品质音乐试听、正版音乐下载、MV观看等，是互联网音乐播放和下载的首选" />
 
-<link rel="stylesheet" type="text/css" href="../../static/index/css/style.css" />
-<link rel="stylesheet" type="text/css" href="../../static/index/css/player.css" />
-<link rel="Shortcut Icon" href="../../static/index/images/favicon.ico" />
-<script type="text/javascript" src="../../static/index/js/modernizr.js"></script>
+<link rel="stylesheet" type="text/css" href="../../static/musicIndex/css/style.css" />
+<link rel="stylesheet" type="text/css" href="../../static/musicIndex/css/player.css" />
+<link rel="Shortcut Icon" href="../../static/musicIndex/images/favicon.ico" />
+<script type="text/javascript" src="../../static/musicIndex/js/modernizr.js"></script>
 <script>
-if ((!to3d()) || document.documentMode == 10 || document.documentMode == 11){ 
+if ((!to3d()) || document.documentMode == 10 || document.documentMode == 11){
 	window.location="error/error.html";
 }
 </script>
@@ -25,40 +25,13 @@ if ((!to3d()) || document.documentMode == 10 || document.documentMode == 11){
 
 <!--头部 开始-->
 <div id="header">
-    <!--顶部bar 开始-->
-    <div class="nav_topbar">
-        <div class="nav_topbar_cont">
-            <ul>
-            	<li><a href="">我的主页</a></li><li><a href="">个人中心</a></li><li><a href="">帮助中心</a></li>
-            </ul>
-            <!--用户登录-->
-            <a class="user_login" href="javascript:;"><em></em>用户登录<i class="arrow"></i></a>
-            <div style="display:none;" class="user_login_box"> 
-                <p class="shadow_cover"></p>
-                <div class="user_login_inner">
-                    <form class="signin_form"> 
-                        <input class="ipt" type="text" value="用户名" name="log"> 
-                        <input class="ipt" type="password" value="密码" name="pwd"> 
-                        <input name="rememberme" id="rememberme" checked="checked" value="forever" type="checkbox">记住密码
-                        <input class="login_btn" type="submit" name="submit" value="登录">
-                    </form>
-                    <p> 
-                        <a href=""><i class="sign"></i>注册</a> | 
-                        <a href=""><i class="lock"></i>忘记密码？</a>
-                    </p>
-                </div>
-            </div>
-            <!--用户登录-->
-        </div>
-    </div>
-    <!--顶部bar 结束-->
   	<!--头部导航 开始-->
     <div id="headCont">
         <div class="main_nav">
 			<!--LOGO-->
-            <div class="logo"><a href=""><img src="../../static/index/images/logo.png" width="60" height="60" alt="logo"></a></div>
+            <div class="logo"><a href=""><img src="../../static/musicIndex/images/logo.png" width="60" height="60" alt="logo"></a></div>
             <div class="logoName">
-            	<a href=""><img src="../../static/index/images/logoName.png" width="120" height="60" alt="logoName"></a>
+            	<a href=""><img src="../../static/musicIndex/images/logoName.png" width="120" height="60" alt="logoName"></a>
             </div>
             <!--主导航-->
             <ul class="navigation" id="main_nav">
@@ -77,8 +50,8 @@ if ((!to3d()) || document.documentMode == 10 || document.documentMode == 11){
                 <audio id="audioPlayer"></audio>
             </ul>
             <div class="user_info">
-				<div class="user_photo"><a href=""><img src="index/images/user_photo.png" /></a></div>
-                <a class="nikeName" href="">哈哈哈</a>
+				<%--<div class="user_photo"><a href=""><img src="../../static/musicIndex/images/user_photo.png" /></a></div>--%>
+                <a class="nikeName" href="">${sessionScope.user.userName}</a>
                 <a class="user_info_list" href=""><span>8</span><span>歌单</span></a>
                 <a class="user_info_list" href=""><span>3</span><span>收听</span></a>
                 <a class="user_info_list" href=""><span>0</span><span>听众</span></a>
@@ -94,7 +67,7 @@ if ((!to3d()) || document.documentMode == 10 || document.documentMode == 11){
                         </a>
                     </li>
                     <li><a href="" class="home">首页</a></li>
-                    
+
                     <div class="sub_list" id="sub_list">
                         <p class="active">
                         	<a href="?cat=9">独家首发</a><a href="?cat=10">歌单广场</a>
@@ -115,7 +88,7 @@ if ((!to3d()) || document.documentMode == 10 || document.documentMode == 11){
                             <a href="?cat=8">手机版本</a>
                         </p>
                     </div>
-                    
+
                     <!--搜索框 开始-->
                     <div class="search_box">
                         <form role="search" method="get" id="searchform" class="searchform" action="">
@@ -141,9 +114,9 @@ if ((!to3d()) || document.documentMode == 10 || document.documentMode == 11){
                                         </div>
                                     </div>
                                 </div>
-                            </div>             
+                            </div>
                         </div>
-                        <!--搜索下拉菜单-->        
+                        <!--搜索下拉菜单-->
                     </div>
                     <!--搜索框 结束-->
                 </ul>
@@ -171,30 +144,30 @@ if ((!to3d()) || document.documentMode == 10 || document.documentMode == 11){
                 </a>
                 <ul>
                     <li id="imgCard0">
-                        <a href=""><span style="opacity:0;"></span></a>      
-                        <img src="../../static/index/main_banner/big0020150102211033.jpg" alt="">
+                        <a href=""><span style="opacity:0;"></span></a>
+                        <img src="../../static/musicIndex/main_banner/big0020150102211033.jpg" alt="">
                         <p style="bottom:0">周杰伦粉丝版MV</p>
-                    </li> 
+                    </li>
                     <li id="imgCard1">
-                        <a href=""><span style="opacity:0.4;"></span></a>      
-                        <img src="../../static/index/main_banner/big0120150101183428.jpg" alt="">
+                        <a href=""><span style="opacity:0.4;"></span></a>
+                        <img src="../../static/musicIndex/main_banner/big0120150101183428.jpg" alt="">
                         <p>乐侃有声节目第二期</p>
-                    </li> 
+                    </li>
                     <li id="imgCard2">
-                        <a href=""><span style="opacity:0.4;" ></span></a>        
-                        <img src="../../static/index/main_banner/big0320150101183351.jpg" alt="">
+                        <a href=""><span style="opacity:0.4;" ></span></a>
+                        <img src="../../static/musicIndex/main_banner/big0320150101183351.jpg" alt="">
                         <p>乐见大牌：”荣“耀之声，”维“我独尊</p>
-                    </li> 
+                    </li>
                     <li id="imgCard3">
-                        <a href=""><span style="opacity:0.4;"></span></a>      
-                        <img src="../../static/index/main_banner/big0420150101224343.jpg" alt="">
+                        <a href=""><span style="opacity:0.4;"></span></a>
+                        <img src="../../static/musicIndex/main_banner/big0420150101224343.jpg" alt="">
                         <p>王力宏四年心血结晶</p>
-                    </li> 
+                    </li>
                     <li id="imgCard4">
-                        <a href=""><span style="opacity:0.4;"></span></a>      
-                        <img src="../../static/index/main_banner/big0720150102210934.jpg" alt="">
+                        <a href=""><span style="opacity:0.4;"></span></a>
+                        <img src="../../static/musicIndex/main_banner/big0720150102210934.jpg" alt="">
                         <p>MV精选：《武媚》女神团美艳大比拼</p>
-                    </li> 
+                    </li>
                 </ul>
                 <!--火狐倒影图层-->
                 <p id="rflt"></p>
@@ -202,7 +175,7 @@ if ((!to3d()) || document.documentMode == 10 || document.documentMode == 11){
             </div>
             <!--序列号按钮-->
             <div class="btn_list">
-                <span class="curr"></span><span></span><span></span><span></span><span></span>        
+                <span class="curr"></span><span></span><span></span><span></span><span></span>
             </div>
         </div>
     </div>
@@ -377,7 +350,7 @@ if ((!to3d()) || document.documentMode == 10 || document.documentMode == 11){
         </div>
     </div>
     <!--推荐内容 结束-->
-    
+
     <!--精选集 开始-->
     <div class="omnibus hot_singer">
         <div class="omnibus_cont new_common">
@@ -388,49 +361,49 @@ if ((!to3d()) || document.documentMode == 10 || document.documentMode == 11){
             <ul id="omnibus_list">
                 <li class="post_big">
                     <a href="">
-                        <img src="../../static/index/images/20141010110027.jpg.jpg" alt="" width="305" height="290">
+                        <img src="../../static/musicIndex/images/20141010110027.jpg.jpg" alt="" width="305" height="290">
                         <i></i>
                     </a>
                     <a href="">神曲虐我千百遍，我待神曲如初恋</a>
                 </li>
                 <li class="post_small">
                     <a href="">
-                        <img src="../../static/index/images/20141010110103.jpg" alt="" width="130" height="130">
+                        <img src="../../static/musicIndex/images/20141010110103.jpg" alt="" width="130" height="130">
                         <span></span>
                     </a>
                     <a href="">孤单的时候有二次元</a>
                 </li>
                 <li class="post_small">
                     <a href="">
-                        <img src='../../static/index/images/20141010110157.jpg' alt="" width="130" height="130">
+                        <img src='../../static/musicIndex/images/20141010110157.jpg' alt="" width="130" height="130">
                         <span></span>
                     </a>
                     <a href="">萌娃爱唱歌</a>
                 </li>
                 <li class="post_small">
                     <a href="">
-                        <img src="../../static/index/images/20141010110216.jpg" alt="" width="130" height="130">
+                        <img src="../../static/musicIndex/images/20141010110216.jpg" alt="" width="130" height="130">
                         <span></span>
                     </a>
                     <a href="">不疯狂,不青春</a>
                 </li>
                 <li class="post_small">
                     <a href="">
-                        <img src='../../static/index/images/20141010110239.jpg' alt="" width="130" height="130">
+                        <img src='../../static/musicIndex/images/20141010110239.jpg' alt="" width="130" height="130">
                         <span></span>
                     </a>
                     <a href="">00后出没，请注意！</a>
                 </li>
                 <li class="post_small">
                     <a href="">
-                        <img src='../../static/index/images/20141013142335.jpg' alt="" width="130" height="130">
+                        <img src='../../static/musicIndex/images/20141013142335.jpg' alt="" width="130" height="130">
                         <span></span>
                     </a>
                     <a href="">让节操碎一会儿</a>
                 </li>
                 <li class="post_small">
                     <a href="">
-                        <img src="../../static/index/images/20141013142414.jpg" alt="" width="130" height="130">
+                        <img src="../../static/musicIndex/images/20141013142414.jpg" alt="" width="130" height="130">
                         <span></span>
                     </a>
                     <a href="">笑多了会怀孕哦</a>
@@ -445,32 +418,32 @@ if ((!to3d()) || document.documentMode == 10 || document.documentMode == 11){
             <ul class="singer_list">
                 <li>
                     <a href="?p=369" class="singerPhoto">
-                        <img src="../../static/index/images/0025NhlN2yWrP4.jpg" alt="" width="70" height="70"></a>
+                        <img src="../../static/musicIndex/images/0025NhlN2yWrP4.jpg" alt="" width="70" height="70"></a>
                     <a href="?p=369" class="singer">周杰伦</a>
                 </li>
                 <li>
                     <a href="?p=357" class="singerPhoto">
-                        <img src="../../static/index/images/001BLpXF2DyJe2.jpg" alt="" width="70" height="70"></a>
+                        <img src="../../static/musicIndex/images/001BLpXF2DyJe2.jpg" alt="" width="70" height="70"></a>
                     <a href="?p=357" class="singer">林俊杰</a>
                 </li>
                 <li>
                     <a href="?p=363" class="singerPhoto">
-                        <img src="../../static/index/images/003Nz2So3XXYek.jpg" alt="" width="70" height="70"></a>
+                        <img src="../../static/musicIndex/images/003Nz2So3XXYek.jpg" alt="" width="70" height="70"></a>
                     <a href="?p=363" class="singer">陈奕迅</a>
                 </li>
                 <li>
                     <a href="?p=367" class="singerPhoto">
-                        <img src="../../static/index/images/002azErJ0UcDN6.jpg" alt="" width="70" height="70"></a>
+                        <img src="../../static/musicIndex/images/002azErJ0UcDN6.jpg" alt="" width="70" height="70"></a>
                     <a href="?p=367" class="singer">张杰</a>
                 </li>
                 <li>
                     <a href="?p=360" class="singerPhoto">
-                        <img src='../../static/index/images/001fNHEf1SFEFN.jpg' alt="" width="70" height="70"></a>
+                        <img src='../../static/musicIndex/images/001fNHEf1SFEFN.jpg' alt="" width="70" height="70"></a>
                     <a href="?p=360" class="singer">邓紫棋</a>
                 </li>
                 <li>
                     <a href="?p=345" class="singerPhoto">
-                        <img src="../../static/index/images/000CK5xN3yZDJt.jpg" alt="" width="70" height="70"></a>
+                        <img src="../../static/musicIndex/images/000CK5xN3yZDJt.jpg" alt="" width="70" height="70"></a>
                     <a href="?p=345" class="singer">许嵩</a>
                 </li>
                 <div style="clear:both;"></div>
@@ -513,7 +486,7 @@ if ((!to3d()) || document.documentMode == 10 || document.documentMode == 11){
                 <li>
 					<a href="" class="twoCode">
 						<span></span>
-						<img class="tCode" src="../../static/index/images/twoCode.jpg" width="100" height="100" alt="二维码" />
+						<img class="tCode" src="../../static/musicIndex/images/twoCode.jpg" width="100" height="100" alt="二维码" />
 					</a>
 				</li>
                 <li><a href=""><span></span></a></li><li><a href=""><span></span></a></li>
@@ -524,15 +497,15 @@ if ((!to3d()) || document.documentMode == 10 || document.documentMode == 11){
 
 </div>
 <!--底部 结束 -->
- 
- 
-  
-<script type="text/javascript" src="../../static/index/js/jquery.js"></script>
-<script type="text/javascript" src="../../static/index/js/index.js"></script>
+
+
+
+<script type="text/javascript" src="../../static/musicIndex/js/jquery.js"></script>
+<script type="text/javascript" src="../../static/musicIndex/js/index.js"></script>
 <!--播放器js-->
-<script type="text/javascript" src="../../static/index/js/player.js"></script>
-<script type="text/javascript" src="../../static/index/js/playlist.js"></script>
-<script type="text/javascript" src="../../static/index/js/player_database.js"></script>
+<script type="text/javascript" src="../../static/musicIndex/js/player.js"></script>
+<script type="text/javascript" src="../../static/musicIndex/js/playlist.js"></script>
+<script type="text/javascript" src="../../static/musicIndex/js/player_database.js"></script>
 <!--播放器js-->
 <!-- 底部模板调用 结束 -->
 

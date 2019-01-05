@@ -32,5 +32,11 @@ public interface TbUserDao {
      */
     Integer findCountByPhone(String phone);
 
+    /**
+     * 注册
+     *
+     * @param user 注册信息
+     * @return 影响行数
+     */
     Integer insertSelective(TbUser user);
 }
