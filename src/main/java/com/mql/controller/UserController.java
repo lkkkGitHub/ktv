@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -82,5 +83,14 @@ public class UserController {
         user.setUserId(UUID.randomUUID().toString().replace("-", "").toLowerCase());
         user.setPassword(MD5Utils.md5(user.getPassword()));
         return userService.register(user);
+    }
+
+    /**
+     * 查询所有用户
+     * @return
+     */
+    @RequestMapping("/findAll")
+    public List<TbUser> findAll(){
+        return userService.findAll();
     }
 }

@@ -112,5 +112,8 @@
     <select id="findCountByPhone" parameterType="java.lang.String" resultType="java.lang.Integer">
         SELECT COUNT(1) FROM `tb_user` WHERE `phone` = #{phone} LIMIT 0, 1
     </select>
+    <select id="findAll" resultType="com.mql.pojo.TbUser">
+        select * from tb_user
+    </select>
 </mapper>
 

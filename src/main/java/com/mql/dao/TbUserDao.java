@@ -3,6 +3,8 @@ package com.mql.dao;
 
 import com.mql.pojo.TbUser;
 
+import java.util.List;
+
 /**
  * @author mql
  * @date 2018/12/12
@@ -33,4 +35,11 @@ public interface TbUserDao {
     Integer findCountByPhone(String phone);
 
     Integer insertSelective(TbUser user);
+
+    /**
+     * 查询所有用户
+     * @return
+     */
+    List<TbUser> findAll();
+
 }

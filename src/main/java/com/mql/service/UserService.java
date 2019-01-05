@@ -8,6 +8,8 @@ import javax.annotation.Resource;
 import com.mql.pojo.TbUser;
 import com.mql.dao.TbUserDao;
 
+import java.util.List;
+
 /**
  * @author mql
  * @date 2018/12/12
@@ -71,5 +73,13 @@ public class UserService {
             return false;
         }
         return true;
+    }
+
+    /**
+     * 查询所有用户
+     * @return
+     */
+    public List<TbUser> findAll(){
+    return tbUserDao.findAll();
     }
 }
