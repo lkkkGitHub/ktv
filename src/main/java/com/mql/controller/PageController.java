@@ -31,6 +31,6 @@ public class PageController {
      */
     @RequestMapping("/")
     public String pageLogin() {
-        return "index";
+        return "login";
     }
 }
