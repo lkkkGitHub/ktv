@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.UUID;
@@ -92,5 +94,16 @@ public class UserController {
     @RequestMapping("/findAll")
     public List<TbUser> findAll(){
         return userService.findAll();
+    }
+
+    /**
+     * 给你做参考的   看完了记得删掉这个方法
+     * @param request
+     * @return
+     */
+    @RequestMapping("/findAll")
+    public String findAll(HttpServletRequest request){
+        request.setAttribute("userList", userService.findAll());
+        return "login";
     }
 }
