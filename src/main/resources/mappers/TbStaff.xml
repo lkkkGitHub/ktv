@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mql.dao.TbStaffDao">
+    <select id="queryAll" resultType="com.mql.pojo.TbStaff">
+        select * from tb_staff s, tb_depart d where s.departId = d.departId;
+    </select>
+    <delete id="deleteById" parameterType="java.lang.Integer">
+        delete from tb_staff where staffId = #{staffId}
+    </delete>
+    <insert id="addStaff" keyProperty="id" useGeneratedKeys="true" >
+        insert into tb_staff(staffName,departId,phone,startTime)
+        values (#{staffName},#{departId},#{phone},#{startTime})
+    </insert>
+    <update id="updateById" parameterType="com.mql.pojo.TbStaff">
+        update tb_staff set staffName=#{staffName},departId=#{departId},phone=#{phone}
+        where staffId=#{staffId}
+    </update>
+</mapper>

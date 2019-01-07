@@ -82,4 +82,26 @@ public class UserService {
     public List<TbUser> findAll(){
     return tbUserDao.findAll();
     }
+
+    /**
+     * 根据电话删除
+     * @param phone
+     * @return
+     */
+    public int deleteByPhone(String phone){
+        if(phone==null){
+            return -1;
+        }else{
+            return tbUserDao.deleteByPhone(phone);
+        }
+    }
+
+    /**
+     * 修改
+     * @param user
+     * @return
+     */
+    public  int  updateByPhone(TbUser user){
+        return tbUserDao.updateByPhone(user);
+    }
 }

@@ -43,13 +43,13 @@
                     <a class="" href="javascript:;">菜单栏</a>
                     <dl class="layui-nav-child">
                         <dd>
-                            <a href="video.jsp" target="right">产品管理</a>
+                            <a href="/video" target="right">产品管理</a>
                         </dd>
                         <dd>
-                            <a href="userType.jsp" target="right">用户管理</a>
+                            <a href="/user/findAll" target="right">用户管理</a>
                         </dd>
                         <dd>
-                            <a href="course.html" target="right">课程管理</a>
+                            <a href="/staff/queryStaff" target="right">课程管理</a>
                         </dd>
                         <dd>
                             <a href="link.html" target="right">友情链接</a>
@@ -106,7 +106,7 @@
     <div class="layui-body" style="z-index: 0;">
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
-            <iframe src="video.jsp" name="right" frameborder="0" width="100%" height="1200"></iframe>
+            <iframe src="/video" name="right" frameborder="0" width="100%" height="1200"></iframe>
 
         </div>
     </div>

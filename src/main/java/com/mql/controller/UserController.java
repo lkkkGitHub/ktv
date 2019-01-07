@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.UUID;
@@ -92,18 +93,31 @@ public class UserController {
      * @return
      */
     @RequestMapping("/findAll")
-    public List<TbUser> findAll(){
-        return userService.findAll();
+    public String findAll(HttpServletRequest request){
+        List<TbUser> tbUsers = userService.findAll();
+        request.getSession().setAttribute("tbUsers",tbUsers);
+        return "userType";
     }
 
     /**
-     * 给你做参考的   看完了记得删掉这个方法
-     * @param request
+     * 删除
+     * @param phone
      * @return
      */
-    @RequestMapping("/findAll")
-    public String findAll(HttpServletRequest request){
-        request.setAttribute("userList", userService.findAll());
-        return "login";
+    @RequestMapping("/deleteByPhone")
+    public String delete(String phone){
+        userService.deleteByPhone(phone);
+        return "redirect:findAll";
+    }
+    @RequestMapping("/updateByPhone")
+    public String update(TbUser user){
+        userService.updateByPhone(user);
+        return "redirect:findAll";
+    }
+
+    @RequestMapping("/updateUser")
+    public String updateUser(String phone, HttpServletRequest request) {
+        request.setAttribute("phone", phone);
+        return "updateUser";
     }
 }
