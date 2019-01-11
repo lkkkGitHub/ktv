@@ -26,4 +26,11 @@ public interface TbStaffDao {
      * @return
      */
     Integer updateById(TbStaff staff);
+
+    /**
+     * 根据姓名查找
+     * @param staffName
+     * @return
+     */
+    List<TbStaff> queryByName(String staffName);
 }

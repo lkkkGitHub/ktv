@@ -72,4 +72,16 @@ public class StaffController {
         return "updateStaff";
     }
 
+    /**
+     * 根据姓名查找
+     * @param staffName
+     * @param request
+     * @return
+     */
+    @RequestMapping("queryByName")
+   public String queryByName(String staffName,HttpServletRequest request){
+        List<TbStaff> staffs = staffService.queryByName(staffName);
+        request.setAttribute("tbStaffs",staffs);
+        return  "redirect:queryStaff";
+    }
 }

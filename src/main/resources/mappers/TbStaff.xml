@@ -15,4 +15,7 @@
         update tb_staff set staffName=#{staffName},departId=#{departId},phone=#{phone}
         where staffId=#{staffId}
     </update>
+    <select id="queryByName" parameterType="java.lang.String" resultType="com.mql.pojo.TbStaff">
+        select  *  from tb_staff where staffName like concat('%',#{staffName},'%')
+    </select>
 </mapper>

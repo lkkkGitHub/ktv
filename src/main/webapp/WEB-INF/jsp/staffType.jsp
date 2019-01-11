@@ -35,14 +35,16 @@
         <div class="am-u-sm-12 am-u-md-3">
 
         </div>
+        <form action="/staff/queryByName" method="post">
         <div class="am-u-sm-12 am-u-md-3">
             <div class="am-input-group am-input-group-sm">
-                <input type="text" class="am-form-field" placeholder="请输入员工">
+                <input type="text" name="staffName" class="am-form-field" placeholder="请输入员工名字">
                 <span class="am-input-group-btn">
-            <button class="am-btn am-btn-default" type="button">搜索</button>
+            <button class="am-btn am-btn-default" type="submit">搜索</button>
           </span>
             </div>
         </div>
+        </form>
     </div>
     <div class="am-g">
         <div class="am-u-sm-12">

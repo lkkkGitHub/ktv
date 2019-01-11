@@ -55,4 +55,13 @@ public class StaffService {
     public  int update(TbStaff staff){
         return  tbStaffDao.updateById(staff);
     }
+
+    /**
+     * 根据姓名查找
+     * @param staffName
+     * @return
+     */
+    public List<TbStaff> queryByName(String staffName){
+        return  tbStaffDao.queryByName(staffName);
+    }
 }
