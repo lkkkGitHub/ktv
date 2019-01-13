@@ -95,15 +95,4 @@ public class UserController {
     public List<TbUser> findAll(){
         return userService.findAll();
     }
-
-    /**
-     * 给你做参考的   看完了记得删掉这个方法
-     * @param request
-     * @return
-     */
-    @RequestMapping("/findAll")
-    public String findAll(HttpServletRequest request){
-        request.setAttribute("userList", userService.findAll());
-        return "login";
-    }
 }
