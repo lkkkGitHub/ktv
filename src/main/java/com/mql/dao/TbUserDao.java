@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * @author mql
- * @date 2018/12/12
+ * @date 2018/12
  */
 public interface TbUserDao {
     /**
@@ -47,5 +47,19 @@ public interface TbUserDao {
      * @return
      */
     List<TbUser> findAll();
+
+    /**
+     * 根据号码删除用户
+     * @param phone
+     * @return
+     */
+    Integer deleteByPhone(String phone);
+
+    /**
+     * 修改
+     * @param user
+     * @return
+     */
+    Integer updateByPhone(TbUser user);
 
 }

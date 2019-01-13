@@ -115,5 +115,11 @@
     <select id="findAll" resultType="com.mql.pojo.TbUser">
         select * from tb_user
     </select>
+    <delete id="deleteByPhone" parameterType="java.lang.String">
+        delete from tb_user where phone=#{phone}
+    </delete>
+    <update id="updateByPhone" parameterType="com.mql.pojo.TbUser" >
+        update tb_user set isBlock=#{isBlock} where  phone=#{phone}
+    </update>
 </mapper>
 

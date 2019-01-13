@@ -7,10 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -92,7 +90,31 @@ public class UserController {
      * @return
      */
     @RequestMapping("/findAll")
-    public List<TbUser> findAll(){
-        return userService.findAll();
+    public String findAll(HttpServletRequest request){
+        List<TbUser> tbUsers = userService.findAll();
+        request.getSession().setAttribute("tbUsers",tbUsers);
+        return "userType";
+    }
+
+    /**
+     * 删除
+     * @param phone
+     * @return
+     */
+    @RequestMapping("/deleteByPhone")
+    public String delete(String phone){
+        userService.deleteByPhone(phone);
+        return "redirect:findAll";
+    }
+    @RequestMapping("/updateByPhone")
+    public String update(TbUser user){
+        userService.updateByPhone(user);
+        return "redirect:findAll";
+    }
+
+    @RequestMapping("/updateUser")
+    public String updateUser(String phone, HttpServletRequest request) {
+        request.setAttribute("phone", phone);
+        return "updateUser";
     }
 }

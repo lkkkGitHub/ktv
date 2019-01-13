@@ -25,21 +25,26 @@
         <div class="am-u-sm-12 am-u-md-6">
             <div class="am-btn-toolbar">
                 <div class="am-btn-group am-btn-group-xs">
-                    <button type="button" class="am-btn am-btn-default"><span class="am-icon-plus"></span> 新增</button>
+                    <a href="/addStaff" class="am-btn am-btn-default">
+                        <span class="am-icon-plus"></span> 新增
+                    </a>
+                    <%--<button type="button" class="am-btn am-btn-default"><span class="am-icon-plus"></span> 新增</button>--%>
                 </div>
             </div>
         </div>
         <div class="am-u-sm-12 am-u-md-3">
 
         </div>
+        <form action="/staff/queryByName" method="post">
         <div class="am-u-sm-12 am-u-md-3">
             <div class="am-input-group am-input-group-sm">
-                <input type="text" class="am-form-field" placeholder="请输入用户">
+                <input type="text" name="staffName" class="am-form-field" placeholder="请输入员工名字">
                 <span class="am-input-group-btn">
-            <button class="am-btn am-btn-default" type="button">搜索</button>
+            <button class="am-btn am-btn-default" type="submit">搜索</button>
           </span>
             </div>
         </div>
+        </form>
     </div>
     <div class="am-g">
         <div class="am-u-sm-12">
@@ -48,46 +53,33 @@
                     <thead>
                     <tr>
                         <th class="table-check"><input type="checkbox"></th>
-                        <th class="table-id">用户名</th>
-                        <th class="table-title">性别</th>
-                        <th class="table-title">年龄</th>
+                        <th class="table-id">ID</th>
+                        <th class="table-title">名字</th>
+                        <th class="table-title">部门</th>
                         <th class="table-title">电话</th>
-                        <th class="table-title">黑名单</th>
+                        <th class="table-title">入职时间</th>
                         <th class="table-set">操作</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${tbUsers}" var="user">
+                    <c:forEach items="${tbStaffs}" var="staff">
                     <tr>
                             <td><input type="checkbox"></td>
-                            <td>${user.userName}</td>
-                            <c:if test="${user.sex==0}">
-                                <td>男</td>
-                            </c:if>
-                            <c:if test="${user.sex == 1}">
-                                <td>女</td>
-                            </c:if>
-                            <c:if test="${user.sex== 2} ">
-                                <td>保密</td>
-                            </c:if>
-                            <td>${user.age}</td>
-                            <td>${user.phone}</td>
-                            <c:if test="${user.isBlock == 0}">
-                                <td>否</td>
-                            </c:if>
-                            <c:if test="${user.isBlock == 1}">
-                                <td>是</td>
-                            </c:if>
+                            <td>${staff.staffId}</td>
+                            <td>${staff.staffName}</td>
+                            <td>${staff.departName}</td>
+                           <td>${staff.phone}</td>
+                           <td>${staff.startTime }</td>
                             <td>
                                 <div class="am-btn-toolbar">
                                     <div class="am-btn-group am-btn-group-xs">
-                                        <a href="/user/updateUser?phone=${user.phone}"class="am-btn am-btn-default am-btn-xs am-text-secondary">
+                                        <a href="/staff/update?staffId=${staff.staffId}"class="am-btn am-btn-default am-btn-xs am-text-secondary">
                                             <span class="am-icon-pencil-square-o"></span> 编辑
                                         </a>
                                         <%--<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span
                                                 class="am-icon-pencil-square-o"></span> 编辑
                                         </button>--%>
-                                        <a href="/user/deleteByPhone?phone=${user.phone}" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only">
+                                        <a href="/staff/deleteById?staffId=${staff.staffId}" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only">
                                             <span class="am-icon-trash-o"></span> 删除
                                         </a>
                                        <%-- <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only">
