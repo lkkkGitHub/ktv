@@ -1,5 +1,8 @@
 package com.mql.until;
 
+import java.sql.Time;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -45,5 +48,27 @@ public class TimeUtils {
      */
     public static Boolean compareTime(Date now, Date future) {
         return now.before(future);
+    }
+
+    private static Time getTime (Date date) {
+        return Time.valueOf(DateFormat.getTimeInstance().format(date));
+    }
+
+    public static Integer judgeTime() {
+        Date date = new Date();
+        Time now = getTime(date);
+        date.setHours(12);
+        date.setMinutes(0);
+        date.setSeconds(0);
+        Time t12 = getTime(date);
+        date.setHours(18);
+        Time t18 = getTime(date);
+        if (now.after(t12)) {
+            if (now.after(t18)) {
+                return 2;
+            }
+            return 1;
+        }
+        return 0;
     }
 }
