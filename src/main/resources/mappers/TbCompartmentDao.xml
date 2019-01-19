@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mql.dao.TbCompartmentDao">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.mql.pojo.TbCompartment">
+        <result column="compartmentId" property="compartmentId"/>
+        <result column="compartmentName" property="compartmentName"/>
+        <result column="stateForenoon" property="stateForenoon"/>
+        <result column="stateAfternoon" property="stateAfternoon"/>
+        <result column="stateEvening" property="stateEvening"/>
+        <result column="state" property="state"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="all_column">
+        `compartmentId`,
+        `compartmentName`,
+        `stateForenoon`,
+        `stateAfternoon`,
+        `stateEvening`,
+        `state`
+    </sql>
+
+    <!--auto generated Code-->
+    <insert id="insert">
+        INSERT INTO tb_compartment (
+            `compartmentId`,
+            `compartmentName`
+        ) VALUES (
+            #{compartmentId},
+            #{compartmentName}
+        )
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="update">
+        UPDATE tb_compartment
+        <set>
+            <if test="compartmentId != null"> `compartmentId` = #{compartmentId}, </if>
+            <if test="compartmentName != null"> `compartmentName` = #{compartmentName}, </if>
+            <if test="stateForenoon != null"> `stateForenoon` = #{stateForenoon}, </if>
+            <if test="stateAfternoon != null"> `stateAfternoon` = #{stateAfternoon}, </if>
+            <if test="stateEvening != null"> `stateEvening` = #{stateEvening}, </if>
+            <if test="state != null"> `state` = #{state} </if>
+        </set>
+        WHERE compartmentId = #{compartmentId}
+    </update>
+
+    <select id="getStateForenoon" resultType="com.mql.pojo.TbCompartment">
+        select compartmentId, compartmentName, stateForenoon allState from tb_compartment
+    </select>
+    <select id="getStateAfternoon" resultType="com.mql.pojo.TbCompartment">
+        select compartmentId, compartmentName, stateAfternoon allState from tb_compartment
+    </select>
+    <select id="getStateEvening" resultType="com.mql.pojo.TbCompartment">
+        select compartmentId, compartmentName, stateEvening allState from tb_compartment
+    </select>
+
+    <update id="destineForenoon">
+        update tb_compartment set stateForenoon = #{param1} where compartmentId = #{param2}
+    </update>
+    <update id="destineAfternoon">
+        update tb_compartment set stateAfternoon = #{param1} where compartmentId = #{param2}
+    </update>
+    <update id="destineEvening">
+        update tb_compartment set stateEvening = #{param1} where compartmentId = #{param2}
+    </update>
+
+    <select id="getDestineForenoon" resultType="com.mql.pojo.TbCompartment">
+        select compartmentName,stateForenoon from tb_compartment where stateForenoon = #{userId}
+    </select>
+    <select id="getDestineAfternoon" resultType="com.mql.pojo.TbCompartment">
+        select compartmentName,stateAfternoon from tb_compartment where stateAfternoon = #{userId}
+    </select>
+    <select id="getDestineEvening" resultType="com.mql.pojo.TbCompartment">
+        select compartmentName,stateEvening from tb_compartment where stateEvening = #{userId}
+    </select>
+
+    <update id="cancelDestineForenoon">
+        update tb_compartment set stateForenoon = '-1' where stateForenoon = #{param1} and compartmentId = #{param2}
+    </update>
+    <update id="cancelDestineAfternoon">
+        update tb_compartment set stateAfternoon = '-1' where stateAfternoon = #{param1} and compartmentId = #{param2}
+    </update>
+    <update id="cancelDestineEvening">
+        update tb_compartment set stateEvening = '-1' where stateEvening = #{param1} and compartmentId = #{param2}
+    </update>
+</mapper>
+

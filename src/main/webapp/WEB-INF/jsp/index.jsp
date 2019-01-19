@@ -17,8 +17,8 @@
 
     <!--图标调用-->
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../../static/musicIndex/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="../../static/musicIndex/css/player.css" />
+    <link rel="stylesheet" type="text/css" href="../../static/musicIndex/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../../static/musicIndex/css/player.css"/>
 
     <!--主要样式-->
     <style>
@@ -279,7 +279,7 @@
                     <div class="box-content">
                         <div class="content">
                             <%--<span class="post">包房预定</span>--%>
-                            <a href="/">
+                            <a href="/compartment/getState">
                                 <h3 class="title">预定</h3>
                             </a>
                         </div>
@@ -295,8 +295,8 @@
                     <img src="../../static/index/images/img-2.jpg" alt="">
                     <div class="box-content">
                         <div class="content">
-                            <%--<span class="post">Web designer</span>--%>
-                            <a href="/musicIndex">
+                            <span class="post">${requestScope.noDestine}</span>
+                            <a href="/compartment/judgeDestineTime">
                                 <h3 class="title">点歌</h3>
                             </a>
                         </div>
@@ -312,8 +312,9 @@
                     <img src="../../static/index/images/img-3.jpg" alt="">
                     <div class="box-content">
                         <div class="content">
-                            <%--<span class="post">Web designer</span>--%>
-                            <h3 class="title">没作用</h3>
+                            <a href="">
+                                <h3 class="title">我的预定</h3>
+                            </a>
                         </div>
                         <ul class="icon">
                             <li><a href="#"><i class="fa fa-search"></i></a></li>
@@ -340,14 +341,17 @@
             <div class="footer_cont_right">
                 <span>关注我们</span>
                 <ul>
-                    <li><a href=""><span></span></a></li><li><a href=""><span></span></a></li>
+                    <li><a href=""><span></span></a></li>
+                    <li><a href=""><span></span></a></li>
                     <li>
                         <a href="" class="twoCode">
                             <span></span>
-                            <img class="tCode" src="../../static/musicIndex/images/twoCode.jpg" width="100" height="100" alt="二维码">
+                            <img class="tCode" src="../../static/musicIndex/images/twoCode.jpg" width="100" height="100"
+                                 alt="二维码">
                         </a>
                     </li>
-                    <li><a href=""><span></span></a></li><li><a href=""><span></span></a></li>
+                    <li><a href=""><span></span></a></li>
+                    <li><a href=""><span></span></a></li>
                 </ul>
             </div>
             <div id="toTop"></div>
