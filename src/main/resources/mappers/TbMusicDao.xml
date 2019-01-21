@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mql.dao.TbMusicDao">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.mql.TbMusic">
+        <result column="musicId" property="musicId"/>
+        <result column="musicName" property="musicName"/>
+        <result column="time" property="time"/>
+        <result column="musicUrl" property="musicUrl"/>
+        <result column="songerId" property="songerId"/>
+        <result column="songerName" property="songerName"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="all_column">
+        `musicId`,
+        `musicName`,
+        `time`,
+        `musicUrl`,
+        `songerId`,
+        `songerName`
+    </sql>
+
+    <!--auto generated Code-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="musicId">
+        INSERT INTO tb_music (
+            `musicId`,
+            `musicName`,
+            `time`,
+            `musicUrl`,
+            `songerId`,
+            `songerName`
+        ) VALUES (
+            #{musicId},
+            #{musicName},
+            #{time},
+            #{musicUrl},
+            #{songerId},
+            #{songerName}
+        )
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="update">
+        UPDATE tb_music
+        <set>
+            <if test="musicId != null"> `musicId` = #{musicId}, </if>
+            <if test="musicName != null"> `musicName` = #{musicName}, </if>
+            <if test="time != null"> `time` = #{time}, </if>
+            <if test="musicUrl != null"> `musicUrl` = #{musicUrl}, </if>
+            <if test="songerId != null"> `songerId` = #{songerId}, </if>
+            <if test="songerName != null"> `songerName` = #{songerName} </if>
+        </set>
+        WHERE musicId = #{musicId}
+    </update>
+</mapper>
+
