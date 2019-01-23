@@ -39,6 +39,7 @@ public class UserController {
         if (user != null) {
             if (user.getIsBlock() == 0) {
                 session.setAttribute("user", user);
+                session.setMaxInactiveInterval(30 * 60);
                 return true;
             } else {
                 return null;

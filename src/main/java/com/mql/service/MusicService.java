@@ -16,5 +16,8 @@ public class MusicService{
     @Resource
     private TbMusicDao tbMusicDao;
 
+    public TbMusic getMusic(Integer musicId) {
+        return tbMusicDao.getMusic(musicId);
+    }
 
 }

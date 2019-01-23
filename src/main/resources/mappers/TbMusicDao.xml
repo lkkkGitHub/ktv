@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.mql.dao.TbMusicDao">
     <!--auto generated Code-->
-    <resultMap id="AllColumnMap" type="com.mql.TbMusic">
+    <resultMap id="AllColumnMap" type="com.mql.pojo.TbMusic">
         <result column="musicId" property="musicId"/>
         <result column="musicName" property="musicName"/>
         <result column="time" property="time"/>
@@ -44,14 +44,18 @@
     <update id="update">
         UPDATE tb_music
         <set>
-            <if test="musicId != null"> `musicId` = #{musicId}, </if>
-            <if test="musicName != null"> `musicName` = #{musicName}, </if>
-            <if test="time != null"> `time` = #{time}, </if>
-            <if test="musicUrl != null"> `musicUrl` = #{musicUrl}, </if>
-            <if test="songerId != null"> `songerId` = #{songerId}, </if>
-            <if test="songerName != null"> `songerName` = #{songerName} </if>
+            <if test="musicId != null">`musicId` = #{musicId},</if>
+            <if test="musicName != null">`musicName` = #{musicName},</if>
+            <if test="time != null">`time` = #{time},</if>
+            <if test="musicUrl != null">`musicUrl` = #{musicUrl},</if>
+            <if test="songerId != null">`songerId` = #{songerId},</if>
+            <if test="songerName != null">`songerName` = #{songerName}</if>
         </set>
         WHERE musicId = #{musicId}
     </update>
+
+    <select id="getMusic" parameterType="java.lang.Integer" resultMap="AllColumnMap">
+        SELECT * FROM tb_music m, tb_songer s WHERE m.`songerId`=s.`songerId` AND m.`musicId` = #{musicId}
+    </select>
 </mapper>
 
