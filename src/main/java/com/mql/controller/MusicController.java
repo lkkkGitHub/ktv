@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @author mql
@@ -95,5 +97,16 @@ public class MusicController {
             return;
         }
         musicList.removeFirst();
+    }
+
+    /**
+     * 查询所有歌曲
+     * @param request
+     */
+    @RequestMapping("/queryAll")
+    public  String queryAll(HttpServletRequest request){
+        List<TbMusic> musicList = musicService.selectAll();
+       request.getSession().setAttribute("AllMusic",musicList);
+       return "AllMusic";
     }
 }

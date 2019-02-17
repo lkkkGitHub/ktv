@@ -1,34 +1,28 @@
 package com.mql.pojo;
 
+import java.sql.Timestamp;
+
 /**
  * @author mql
  * @date 21019/01/21
  */
 public class TbMusic {
 
-    private Integer musicId;
+    private Integer id;
     private String musicName;
     private java.sql.Timestamp time;
-    private String musicUrl;
+    private String musicStr;
     private Integer songerId;
     private String songerName;
+    private String special;
 
-    public String getSongerName() {
-        return songerName;
+    public Integer getId() {
+        return id;
     }
 
-    public void setSongerName(String songerName) {
-        this.songerName = songerName;
+    public void setId(Integer id) {
+        this.id = id;
     }
-
-    public Integer getMusicId() {
-        return musicId;
-    }
-
-    public void setMusicId(Integer musicId) {
-        this.musicId = musicId;
-    }
-
 
     public String getMusicName() {
         return musicName;
@@ -38,24 +32,21 @@ public class TbMusic {
         this.musicName = musicName;
     }
 
-
-    public java.sql.Timestamp getTime() {
+    public Timestamp getTime() {
         return time;
     }
 
-    public void setTime(java.sql.Timestamp time) {
+    public void setTime(Timestamp time) {
         this.time = time;
     }
 
-
-    public String getMusicUrl() {
-        return musicUrl;
+    public String getMusicStr() {
+        return musicStr;
     }
 
-    public void setMusicUrl(String musicUrl) {
-        this.musicUrl = musicUrl;
+    public void setMusicStr(String musicStr) {
+        this.musicStr = musicStr;
     }
-
 
     public Integer getSongerId() {
         return songerId;
@@ -65,4 +56,19 @@ public class TbMusic {
         this.songerId = songerId;
     }
 
+    public String getSongerName() {
+        return songerName;
+    }
+
+    public void setSongerName(String songerName) {
+        this.songerName = songerName;
+    }
+
+    public String getSpecial() {
+        return special;
+    }
+
+    public void setSpecial(String special) {
+        this.special = special;
+    }
 }

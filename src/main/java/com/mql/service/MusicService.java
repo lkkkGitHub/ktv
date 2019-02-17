@@ -19,5 +19,8 @@ public class MusicService{
     public TbMusic getMusic(Integer musicId) {
         return tbMusicDao.getMusic(musicId);
     }
+    public List<TbMusic> selectAll(){
+        return tbMusicDao.selectAll();
+    }
 
 }
