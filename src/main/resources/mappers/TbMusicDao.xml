@@ -55,7 +55,7 @@
     </update>
 
     <select id="getMusic" parameterType="java.lang.Integer" resultMap="AllColumnMap">
-        SELECT * FROM tb_music m, tb_songer s WHERE m.`songerId`=s.`songerId` AND m.`musicId` = #{musicId}
+        SELECT * FROM tb_music m, tb_songer s WHERE m.`songerId`=s.`songerId` AND m.`id` = #{musicId}
     </select>
     <!--查找所有歌曲-->
     <select id="selectAll" resultType="com.mql.pojo.TbMusic">
