@@ -93,9 +93,9 @@
 
                     <!--搜索框 开始-->
                     <div class="search_box">
-                        <form role="search" method="get" id="searchform" class="searchform" action="">
+                        <form role="search" method="get" id="searchform" class="searchform" action="/music/search">
                             <input type="submit" value="" class="search_btn" id="searchsubmit"/>
-                            <input type="text" class="search" value="搜索好音乐" name="s" id="s"/>
+                            <input type="text" class="search" value="搜索好音乐" name="musicName" id="s"/>
                         </form>
                         <!--搜索下拉菜单-->
                         <div class="hot_search" id="hot_search">
@@ -361,56 +361,76 @@
                 <a href="" class="more"></a>
             </div>
             <ul id="omnibus_list">
-                <li class="post_big">
-                    <a href="">
-                        <img src="../../static/musicIndex/images/20141010110027.jpg.jpg" alt="" width="305"
-                             height="290">
-                        <i></i>
-                    </a>
-                    <a href="">神曲虐我千百遍，我待神曲如初恋</a>
-                </li>
+               <li class="post_small">
+                   <a href="/music/musicList?classifyId=1">
+                       <img src="../../static/musicIndex/images/h05.jpg" alt="" width="130" height="130">
+                       <span></span>
+                   </a>
+                   <a href="">情歌</a>
+               </li>
                 <li class="post_small">
-                    <a href="">
+                    <a href="/music/musicList?classifyId=2">
                         <img src="../../static/musicIndex/images/20141010110103.jpg" alt="" width="130" height="130">
                         <span></span>
                     </a>
-                    <a href="">孤单的时候有二次元</a>
+                    <a href="">红歌</a>
                 </li>
                 <li class="post_small">
-                    <a href="">
+                    <a href="/music/musicList?classifyId=3">
                         <img src='../../static/musicIndex/images/20141010110157.jpg' alt="" width="130" height="130">
                         <span></span>
                     </a>
-                    <a href="">萌娃爱唱歌</a>
+                    <a href="">流行</a>
                 </li>
                 <li class="post_small">
-                    <a href="">
+                    <a href="/music/musicList?classifyId=4">
                         <img src="../../static/musicIndex/images/20141010110216.jpg" alt="" width="130" height="130">
                         <span></span>
                     </a>
-                    <a href="">不疯狂,不青春</a>
+                    <a href="">欧美</a>
                 </li>
                 <li class="post_small">
-                    <a href="">
+                    <a href="/music/musicList?classifyId=5">
                         <img src='../../static/musicIndex/images/20141010110239.jpg' alt="" width="130" height="130">
                         <span></span>
                     </a>
-                    <a href="">00后出没，请注意！</a>
+                    <a href="">摇滚</a>
                 </li>
                 <li class="post_small">
-                    <a href="">
+                    <a href="/music/musicList?classifyId=6">
                         <img src='../../static/musicIndex/images/20141013142335.jpg' alt="" width="130" height="130">
                         <span></span>
                     </a>
-                    <a href="">让节操碎一会儿</a>
+                    <a href="">轻音乐</a>
                 </li>
                 <li class="post_small">
-                    <a href="">
-                        <img src="../../static/musicIndex/images/20141013142414.jpg" alt="" width="130" height="130">
-                        <span></span>
-                    </a>
-                    <a href="">笑多了会怀孕哦</a>
-                </li>
+               <a href="/music/musicList?classifyId=7">
+                   <img src="../../static/musicIndex/images/h04.jpg" alt="" width="130" height="130">
+                   <span></span>
+               </a>
+               <a href="">民谣</a>
+           </li>
+               <li class="post_small">
+                   <a href="/music/musicList?classifyId=8">
+                       <img src="../../static/musicIndex/images/h02.jpg" alt="" width="130" height="130">
+                       <span></span>
+                   </a>
+                   <a href="">古风</a>
+               </li>
+               <li class="post_small">
+                   <a href="/music/musicList?classifyId=9">
+                       <img src="../../static/musicIndex/images/h01.jpg" alt="" width="130" height="130">
+                       <span></span>
+                   </a>
+                   <a href="">怀旧</a>
+               </li>
+               <li class="post_small">
+                   <a href="/music/musicList?classifyId=10">
+                       <img src="../../static/musicIndex/images/h03.jpg" alt="" width="130" height="130">
+                       <span></span>
+                   </a>
+                   <a href="">乡村</a>
+               </li>
             </ul>
         </div>
         <div class="hot_singer_cont new_common">

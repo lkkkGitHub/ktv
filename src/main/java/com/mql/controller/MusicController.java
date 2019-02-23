@@ -101,12 +101,33 @@ public class MusicController {
 
     /**
      * 查询所有歌曲
+     *
      * @param request
      */
     @RequestMapping("/queryAll")
-    public  String queryAll(HttpServletRequest request){
+    public String queryAll(HttpServletRequest request) {
         List<TbMusic> musicList = musicService.selectAll();
-       request.getSession().setAttribute("AllMusic",musicList);
-       return "AllMusic";
+        request.getSession().setAttribute("AllMusic", musicList);
+        return "AllMusic";
+    }
+
+    /**
+     * 歌曲查找
+     *
+     * @param request
+     * @return
+     */
+    @RequestMapping("/search")
+    public String search(HttpServletRequest request, String musicName) {
+        List<TbMusic> musicList = musicService.search(musicName);
+        request.getSession().setAttribute("AllMusic", musicList);
+        return "AllMusic";
+    }
+
+    @RequestMapping("/musicList")
+    public String musicList(HttpServletRequest request, Integer classifyId) {
+        List<TbMusic> musics = musicService.musicList(classifyId);
+        request.getSession().setAttribute("AllMusic", musics);
+        return "AllMusic";
     }
 }

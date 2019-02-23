@@ -24,4 +24,19 @@ public interface TbMusicDao {
      * @return
      */
     List<TbMusic> selectAll();
+
+    /**
+     * 歌名查找
+     * @param musicName
+     * @return
+     */
+    List<TbMusic> search(String musicName);
+
+    /**
+     * 分类歌曲
+     * @param classifyId
+     * @return
+     */
+
+    List<TbMusic> musicList(Integer classifyId);
 }

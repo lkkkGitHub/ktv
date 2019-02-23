@@ -47,7 +47,7 @@
             <if test="musicId != null">`musicId` = #{musicId},</if>
             <if test="musicName != null">`musicName` = #{musicName},</if>
             <if test="time != null">`time` = #{time},</if>
-            <if test="musicUrl != null">`musicUrl` = #{musicUrl},</if>
+            <if test="musicStr != null">`musicStr ` = #{musicStr },</if>
             <if test="songerId != null">`songerId` = #{songerId},</if>
             <if test="songerName != null">`songerName` = #{songerName}</if>
         </set>
@@ -60,6 +60,15 @@
     <!--查找所有歌曲-->
     <select id="selectAll" resultType="com.mql.pojo.TbMusic">
         select  * from tb_music m, tb_songer s WHERE m.`songerId`=s.`songerId`
+    </select>
+    <!--歌曲搜索-->
+    <select id="search" parameterType="java.lang.String" resultType="com.mql.pojo.TbMusic">
+      select * from tb_music where musicName like concat('%',#{musicName},'%')
+    </select>
+
+    <select id="musicList" resultType="com.mql.pojo.TbMusic" parameterType="java.lang.Integer">
+        SELECT m.* FROM tb_music m,tb_classify c, tb_song_classify sc WHERE c.classifyId = #{classifyId}
+        AND sc.classifyId = c.classifyId and sc.musicId = m.id;
     </select>
 </mapper>
 
