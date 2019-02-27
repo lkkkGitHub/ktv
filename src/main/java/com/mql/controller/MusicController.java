@@ -37,6 +37,19 @@ public class MusicController {
     }
 
     /**
+     * 获取点歌列表
+     *
+     * @param session
+     * @return
+     */
+    @RequestMapping("/getMusics")
+    public String getMusics(HttpSession session) {
+        LinkedList<TbMusic> musics =  getMusicList(session);
+        session.setAttribute("musicList", musics);
+        return "";
+    }
+
+    /**
      * 点歌
      *
      * @param session
@@ -102,32 +115,32 @@ public class MusicController {
     /**
      * 查询所有歌曲
      *
-     * @param request
+     * @param session
      */
     @RequestMapping("/queryAll")
-    public String queryAll(HttpServletRequest request) {
+    public String queryAll(HttpSession session) {
         List<TbMusic> musicList = musicService.selectAll();
-        request.getSession().setAttribute("AllMusic", musicList);
+        session.setAttribute("AllMusic", musicList);
         return "AllMusic";
     }
 
     /**
      * 歌曲查找
      *
-     * @param request
+     * @param session
      * @return
      */
     @RequestMapping("/search")
-    public String search(HttpServletRequest request, String musicName) {
+    public String search(HttpSession session, String musicName) {
         List<TbMusic> musicList = musicService.search(musicName);
-        request.getSession().setAttribute("AllMusic", musicList);
+        session.setAttribute("AllMusic", musicList);
         return "AllMusic";
     }
 
     @RequestMapping("/musicList")
-    public String musicList(HttpServletRequest request, Integer classifyId) {
+    public String musicList(HttpSession session, Integer classifyId) {
         List<TbMusic> musics = musicService.musicList(classifyId);
-        request.getSession().setAttribute("AllMusic", musics);
+        session.setAttribute("AllMusic", musics);
         return "AllMusic";
     }
 }

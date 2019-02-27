@@ -50,6 +50,12 @@
                             歌曲列表
                         </a>
                     </li>
+                    <li class="menuLi cur">
+                        <a href="/AllMusic">
+                            <i class="icon iplay"></i>
+                            播放列表
+                        </a>
+                    </li>
 
                 </ul>
 
