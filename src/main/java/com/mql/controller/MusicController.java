@@ -46,7 +46,7 @@ public class MusicController {
     public String getMusics(HttpSession session) {
         LinkedList<TbMusic> musics =  getMusicList(session);
         session.setAttribute("musicList", musics);
-        return "";
+        return "playMusic";
     }
 
     /**
@@ -56,10 +56,11 @@ public class MusicController {
      * @param musicId 音乐id
      */
     @RequestMapping("/addMusicList")
-    public void addMusicList(HttpSession session, Integer musicId) {
+    public String addMusicList(HttpSession session, Integer musicId) {
         LinkedList<TbMusic> musicList = getMusicList(session);
         musicList.addLast(musicService.getMusic(musicId));
         session.setAttribute("musicList", musicList);
+        return "redirect:getMusics";
     }
 
     /**
@@ -70,14 +71,14 @@ public class MusicController {
      * @param index   表示需要移动的歌曲当前所在的位置
      */
     @RequestMapping("/moveMusicList")
-    public void moveMusicList(HttpSession session, Integer flag, int index) {
+    public String moveMusicList(HttpSession session, Integer flag, int index) {
         LinkedList<TbMusic> musicList = getMusicList(session);
         if (musicList.size() <= 1) {
-            return;
+            return "redirect:getMusics";
         }
         TbMusic music = musicList.get(index);
         TbMusic musicToSwap;
-        if (flag == 0 && index != 0) {
+        if (flag == 0 && index > 1) {
             musicList.remove(index);
             musicToSwap = musicList.get(--index);
             musicList.remove(index);
@@ -89,13 +90,11 @@ public class MusicController {
             musicList.remove(index + 1);
             musicList.add(index, musicToSwap);
             musicList.add(index + 1, music);
-        } else if (flag == 2 && index != 0) {
-            musicToSwap = musicList.getFirst();
+        } else if (flag == 2 && index > 1) {
             musicList.remove(index);
-            musicList.add(index, musicToSwap);
-            musicList.removeFirst();
-            musicList.addFirst(music);
+            musicList.add(1, music);
         }
+        return "redirect:getMusics";
     }
 
     /**
@@ -104,12 +103,13 @@ public class MusicController {
      * @param session
      */
     @RequestMapping("/cutMusicList")
-    public void cutMusicList(HttpSession session) {
+    public String cutMusicList(HttpSession session) {
         LinkedList<TbMusic> musicList = getMusicList(session);
         if (musicList.size() == 0) {
-            return;
+            return "redirect:getMusics";
         }
         musicList.removeFirst();
+        return "redirect:getMusics";
     }
 
     /**

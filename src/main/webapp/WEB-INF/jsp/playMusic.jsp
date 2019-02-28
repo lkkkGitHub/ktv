@@ -73,7 +73,7 @@
                     <div class="scrollView">
                         <ul class="songUL">
                             <span id="songList1">
-                                <c:forEach items="${sessionScope.AllMusic}" var="m">
+                                <c:forEach items="${sessionScope.musicList}" var="m">
                                     <li class="songList">
                                         <div class="songLMain">
                                             <div class="check">
