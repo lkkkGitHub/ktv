@@ -17,7 +17,7 @@
 
     <link href="../../static/playmusic/css/qikoo.css" type="text/css" rel="stylesheet"/>
     <script src="../../static/playmusic/js/qikoo.js"></script>
-
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
 </head>
 <body onload="findSongsingleList();">
 <!--模糊画布-->
@@ -26,7 +26,7 @@
 </div>
 <div class="playerMain">
     <div class="top">
-        <a style="cursor: pointer;" href="/redirect"><h2 class="logoaichang"
+        <a style="cursor: pointer;" href="/compartment/judgeDestineTime"><h2 class="logoaichang"
                                                          onmouseover="huan()" onmouseout="huan2()">随心听音乐</h2></a>
         <script> $(window).load(function () {
             fPlay('${id}')
@@ -73,7 +73,7 @@
                     <div class="scrollView">
                         <ul class="songUL">
                             <span id="songList1">
-                                <c:forEach items="${sessionScope.musicList}" var="m">
+                                <c:forEach items="${sessionScope.musicList}" var="m" varStatus="status">
                                     <li class="songList">
                                         <div class="songLMain">
                                             <div class="check">
@@ -93,8 +93,13 @@
                                                 <div class="col">${m.special}</div>
                                             </div>
                                             <div class="control" hp="123">
-                                                <a class="cicon more" style="display:none" onclick="showAddDiv(${m.id})"></a>
-                                                <a class="cicon dele" onclick="" style="display:none"></a>
+                                                <%--<a class="cicon more" style="display:none" onclick="showAddDiv(${m.id})"></a>
+                                                <a class="cicon dele" onclick="" style="display:none"></a>--%>
+                                                <a href="/music/moveMusicList?flag=1&index=${status.index}" ><i class="fa fa-arrow-circle-down" ></i></a>
+                                                <a href="/music/moveMusicList?flag=0&index=${status.index}"><i class="fa fa-arrow-circle-up"></i></a>
+                                                <%--<a href="/music/moveMusicList?flag=1&index=${status.index}"><i class="fa fa-plus-square"></i></a>--%>
+                                                <a href="/music/moveMusicList?flag=2&index=${status.index}"><i class="fa fa-hand-o-up"></i></a>
+                                                <a href="/music/remove?index=${status.index}"><i class="fa fa-minus-square"></i></a>
                                             </div>
                                         </div>
                                     </li>

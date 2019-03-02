@@ -44,7 +44,7 @@ public class MusicController {
      */
     @RequestMapping("/getMusics")
     public String getMusics(HttpSession session) {
-        LinkedList<TbMusic> musics =  getMusicList(session);
+        LinkedList<TbMusic> musics = getMusicList(session);
         session.setAttribute("musicList", musics);
         return "playMusic";
     }
@@ -87,7 +87,7 @@ public class MusicController {
         } else if (flag == 1 && index != musicList.size() - 1) {
             musicToSwap = musicList.get(index + 1);
             musicList.remove(index);
-            musicList.remove(index + 1);
+            musicList.remove(index);
             musicList.add(index, musicToSwap);
             musicList.add(index + 1, music);
         } else if (flag == 2 && index > 1) {
@@ -109,6 +109,20 @@ public class MusicController {
             return "redirect:getMusics";
         }
         musicList.removeFirst();
+        return "redirect:getMusics";
+    }
+
+    /**
+     * 删除列表中的歌曲
+     *
+     * @param session
+     * @param index
+     * @return
+     */
+    @RequestMapping("/remove")
+    public String remove(HttpSession session, int index) {
+        LinkedList<TbMusic> musicList = getMusicList(session);
+        musicList.remove(index);
         return "redirect:getMusics";
     }
 
@@ -137,6 +151,12 @@ public class MusicController {
         return "AllMusic";
     }
 
+    /**
+     *
+     * @param session
+     * @param classifyId
+     * @return
+     */
     @RequestMapping("/musicList")
     public String musicList(HttpSession session, Integer classifyId) {
         List<TbMusic> musics = musicService.musicList(classifyId);

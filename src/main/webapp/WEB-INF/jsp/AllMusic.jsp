@@ -16,6 +16,7 @@
     <!--新建歌单-->
 
     <link href="../../static/playmusic/css/qikoo.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
     <script src="../../static/playmusic/js/qikoo.js"></script>
 
 </head>
@@ -26,7 +27,7 @@
 </div>
 <div class="playerMain">
     <div class="top">
-        <a style="cursor: pointer;" href="/redirect"><h2 class="logoaichang"
+        <a style="cursor: pointer;" href="/compartment/judgeDestineTime"><h2 class="logoaichang"
                                                          onmouseover="huan()" onmouseout="huan2()">随心听音乐</h2></a>
         <script> $(window).load(function () {
             fPlay('${id}')
@@ -87,14 +88,14 @@
                                             </div>
                                             <div class="songBd">
                                                 <div class="col colsn">
-                                                    ${m.musicName}
+                                                        ${m.musicName}
                                                 </div>
                                                 <div class="col colcn">${m.songerName}</div>
                                                 <div class="col">${m.special}</div>
                                             </div>
                                             <div class="control" hp="123">
-                                                <a class="cicon more" style="display:none" onclick="showAddDiv(${m.id})"></a>
-                                                <a class="cicon dele" onclick="" style="display:none"></a>
+                                              <a href="/music/addMusicList?musicId=${m.id}"><i
+                                                      class="fa fa-plus-square"></i></a>
                                             </div>
                                         </div>
                                     </li>
