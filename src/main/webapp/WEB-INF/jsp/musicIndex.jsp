@@ -440,34 +440,34 @@
             </div>
             <ul class="singer_list">
                 <li>
-                    <a href="?p=369" class="singerPhoto">
+                    <a href="/music/musicInSinger?songerId=4" class="singerPhoto">
                         <img src="../../static/musicIndex/images/0025NhlN2yWrP4.jpg" alt="" width="70" height="70"></a>
-                    <a href="?p=369" class="singer">周杰伦</a>
+                    <a href="/music/musicInSinger?songerId=4" class="singer">周杰伦</a>
                 </li>
                 <li>
-                    <a href="?p=357" class="singerPhoto">
+                    <a href="/music/musicInSinger?songerId=2" class="singerPhoto">
                         <img src="../../static/musicIndex/images/001BLpXF2DyJe2.jpg" alt="" width="70" height="70"></a>
-                    <a href="?p=357" class="singer">林俊杰</a>
+                    <a href="/music/musicInSinger?songerId=2" class="singer">林俊杰</a>
                 </li>
                 <li>
-                    <a href="?p=363" class="singerPhoto">
+                    <a href="/music/musicInSinger?songerId=5" class="singerPhoto">
                         <img src="../../static/musicIndex/images/003Nz2So3XXYek.jpg" alt="" width="70" height="70"></a>
-                    <a href="?p=363" class="singer">陈奕迅</a>
+                    <a href="/music/musicInSinger?songerId=5" class="singer">陈奕迅</a>
                 </li>
                 <li>
-                    <a href="?p=367" class="singerPhoto">
+                    <a href="/music/musicInSinger?songerId=1" class="singerPhoto">
                         <img src="../../static/musicIndex/images/002azErJ0UcDN6.jpg" alt="" width="70" height="70"></a>
-                    <a href="?p=367" class="singer">张杰</a>
+                    <a href="/music/musicInSinger?songerId=1" class="singer">张杰</a>
                 </li>
                 <li>
-                    <a href="?p=360" class="singerPhoto">
+                    <a href="/music/musicInSinger?songerId=3" class="singerPhoto">
                         <img src='../../static/musicIndex/images/001fNHEf1SFEFN.jpg' alt="" width="70" height="70"></a>
-                    <a href="?p=360" class="singer">邓紫棋</a>
+                    <a href="/music/musicInSinger?songerId=3" class="singer">邓紫棋</a>
                 </li>
                 <li>
-                    <a href="?p=345" class="singerPhoto">
+                    <a href="/music/musicInSinger?songerId=6" class="singerPhoto">
                         <img src="../../static/musicIndex/images/000CK5xN3yZDJt.jpg" alt="" width="70" height="70"></a>
-                    <a href="?p=345" class="singer">许嵩</a>
+                    <a href="/music/musicInSinger?songerId=6" class="singer">许嵩</a>
                 </li>
                 <div style="clear:both;"></div>
             </ul>

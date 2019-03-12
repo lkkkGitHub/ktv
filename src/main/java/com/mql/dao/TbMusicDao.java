@@ -39,4 +39,11 @@ public interface TbMusicDao {
      */
 
     List<TbMusic> musicList(Integer classifyId);
+
+    /**
+     * 歌手歌曲
+     * @param songnerId
+     * @return
+     */
+    List<TbMusic> musicInSinger(Integer songnerId);
 }

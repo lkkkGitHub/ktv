@@ -32,4 +32,7 @@ public class MusicService {
     public List<TbMusic> musicList(Integer classifyId){
         return tbMusicDao.musicList(classifyId);
     }
+    public  List<TbMusic> musicInSinger(Integer songerId){
+        return tbMusicDao.musicInSinger(songerId);
+    }
 }

@@ -152,7 +152,7 @@ public class MusicController {
     }
 
     /**
-     *
+     *分类歌曲
      * @param session
      * @param classifyId
      * @return
@@ -162,5 +162,18 @@ public class MusicController {
         List<TbMusic> musics = musicService.musicList(classifyId);
         session.setAttribute("AllMusic", musics);
         return "AllMusic";
+    }
+
+    /**
+     * 歌手歌曲
+     * @param session
+     * @param songerId
+     * @return
+     */
+    @RequestMapping("/musicInSinger")
+    public String musicInSinger(HttpSession session,Integer songerId){
+        List<TbMusic> tbMusics = musicService.musicInSinger(songerId);
+        session.setAttribute("AllMusic",tbMusics);
+        return  "AllMusic";
     }
 }
