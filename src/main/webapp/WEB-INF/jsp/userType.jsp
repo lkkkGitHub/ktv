@@ -14,7 +14,7 @@
 <body>
 <div class="admin-content-body">
     <div class="am-cf am-padding am-padding-bottom-0">
-        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">资讯类别管理</strong>
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">用户管理</strong>
             <small></small>
         </div>
     </div>

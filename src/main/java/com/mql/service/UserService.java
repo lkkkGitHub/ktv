@@ -104,4 +104,13 @@ public class UserService {
     public  int  updateByPhone(TbUser user){
         return tbUserDao.updateByPhone(user);
     }
+
+    /**
+     * 用户修改个人信息
+     * @param user
+     * @return
+     */
+    public int updateById(TbUser user){
+        return tbUserDao.updateById(user);
+    }
 }

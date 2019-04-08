@@ -32,7 +32,7 @@
             <div class="logo"><a href=""><img src="../../static/musicIndex/images/logo.png" width="60" height="60"
                                               alt="logo"></a></div>
             <div class="logoName">
-                <a href=""><img src="../../static/musicIndex/images/logoName.png" width="120" height="60"
+                <a href="Personal.jsp"><img src="../../static/musicIndex/images/logoName.png" width="120" height="60"
                                 alt="logoName"></a>
             </div>
             <!--主导航-->
@@ -53,7 +53,7 @@
             </ul>
             <div class="user_info">
                 <%--<div class="user_photo"><a href=""><img src="../../static/musicIndex/images/user_photo.png" /></a></div>--%>
-                <a class="nikeName" href="">${sessionScope.user.userName}</a>
+                <a class="nikeName" href="/user/redirect">${sessionScope.user.userName}</a>
                 <a class="user_info_list" href=""><span>8</span><span>歌单</span></a>
                 <a class="user_info_list" href=""><span>3</span><span>收听</span></a>
                 <a class="user_info_list" href=""><span>0</span><span>听众</span></a>

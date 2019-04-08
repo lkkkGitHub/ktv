@@ -49,9 +49,9 @@
                             <a href="/user/findAll" target="right">用户管理</a>
                         </dd>
                         <dd>
-                            <a href="/staff/queryStaff" target="right">课程管理</a>
+                            <a href="/staff/queryStaff" target="right">员工管理</a>
                         </dd>
-                        <dd>
+                        <%--<dd>
                             <a href="link.html" target="right">友情链接</a>
                         </dd>
                         <dd>
@@ -62,7 +62,7 @@
                         </dd>
                         <dd>
                             <a href="javascript:void(0)"  onclick="updatePwd('修改密码',1)">修改密码</a>
-                        </dd>
+                        </dd>--%>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
@@ -71,14 +71,7 @@
 
                     </dl>
                 </li>
-                <li class="layui-nav-item">
-                    <a href="javascript:;">菜单栏</a>
-                    <dl class="layui-nav-child">
-
-                    </dl>
-                </li>
-
-                <li class="layui-nav-item">
+              <%--  <li class="layui-nav-item">
                     <a href="javascript:;">菜单栏</a>
                     <dl class="layui-nav-child">
 
@@ -98,6 +91,13 @@
 
                     </dl>
                 </li>
+
+                <li class="layui-nav-item">
+                    <a href="javascript:;">菜单栏</a>
+                    <dl class="layui-nav-child">
+
+                    </dl>
+                </li>--%>
 
             </ul>
         </div>

@@ -62,4 +62,11 @@ public interface TbUserDao {
      */
     Integer updateByPhone(TbUser user);
 
+    /**
+     * 用户修改个人信息
+     * @param user
+     * @return
+     */
+    Integer updateById(TbUser user);
+
 }

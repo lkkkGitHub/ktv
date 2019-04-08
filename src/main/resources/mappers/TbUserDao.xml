@@ -121,5 +121,9 @@
     <update id="updateByPhone" parameterType="com.mql.pojo.TbUser" >
         update tb_user set isBlock=#{isBlock} where  phone=#{phone}
     </update>
+    <update id="updateById" parameterType="com.mql.pojo.TbUser">
+        update tb_user set sex=#{sex},age=#{age},phone=#{phone},userName=#{userName}
+        where userId=#{userId}
+    </update>
 </mapper>
 

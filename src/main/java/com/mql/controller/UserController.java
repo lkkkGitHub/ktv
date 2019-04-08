@@ -26,7 +26,7 @@ public class UserController {
     private UserService userService;
 
     /**
-     * 登陆，使用ajax登陆；再login.jsp 91行
+     * 登陆，使用ajax登陆，login.jsp 91行
      * 账号密码都正确service会返回一个TbUser对象，错误即返回null；如果在黑名单中
      * 会返回一个null给前台，前台ajax中进行判断；
      *
@@ -117,5 +117,20 @@ public class UserController {
     public String updateUser(String phone, HttpServletRequest request) {
         request.setAttribute("phone", phone);
         return "updateUser";
+    }
+
+    /**
+     * 用户修改信息
+     * @param user
+     * @return
+     */
+    @RequestMapping("updateById")
+    public String updateById(TbUser user){
+        userService.updateById(user);
+        return "musicIndex";
+    }
+    @RequestMapping("/redirect")
+    public String redirect(){
+        return "Personal";
     }
 }
